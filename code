@@ -1,0 +1,242 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int charLevel = 1;
+    int exp = 0;
+    int arch=16, block=16, hvy=16, hand1=16, hand2=16, smith=16, lgt=16, lock=16, pick=16, sneak=16, speech=16, alch=16, ench=16, rest=16, ill=16, dest=16, conj=16, alt=16;
+    int race;
+    int skill;
+    cout << "What race are you? (input corresponding integer)\nGuide: \n1 = altmer\n2 = dunmer\n3 = bosmer\n4 = orc\n5 = argonian\n6 = nord\n7 = breton\n8 = imperial\n9 = khajiit\n10 = redguard ";
+    cin >> race;
+    switch(race)
+    {
+        case 5:
+            lgt += 5;
+            sneak += 5;
+            lock += 10;
+            pick += 5;
+            rest += 5;
+            alt += 5;
+            break;
+        case 1:
+            ill += 10;
+            conj += 5;
+            rest += 5;
+            dest += 5;
+            alt += 5;
+            ench += 5;
+            break;
+        case 2:
+            lgt += 5;
+            sneak += 5;
+            alch += 5;
+            ill += 5;
+            dest += 10;
+            alt += 5;
+            break;
+        case 3:
+            arch += 10;
+            lgt += 5;
+            sneak += 5;
+            lock += 5;
+            pick += 5;
+            alch += 5;
+            break;
+        case 4:
+            smith += 5;
+            hand2 += 5;
+            hand1 += 5;
+            hvy += 10;
+            ench += 5;
+            block += 5;
+            break;
+        case 6:
+            smith += 5;
+            block += 5;
+            hand2 += 10;
+            hand1 += 5;
+            speech += 5;
+            lgt += 5;
+            break;
+        case 7:
+            speech += 5;
+            alch += 5;
+            ill += 5;
+            conj += 10;
+            alt += 5;
+            rest += 5;
+            break;
+        case 8:
+            hvy += 5;
+            block += 5;
+            hand1 += 5;
+            ench += 5;
+            dest += 5;
+            rest += 10;
+            break;
+        case 9:
+            hand1 += 5;
+            arch += 5;
+            lock += 5;
+            pick += 5;
+            sneak += 10;
+            alch += 5;
+            break;
+        case 10:
+            smith += 5;
+            block += 5;
+            hand1 += 10;
+            arch += 5;
+            dest += 5;
+            alt += 5;
+            break;
+        default:
+            cout << "Invalid race.";
+            break;
+    }
+    do
+    {
+    cout << "Input all skill trees you plan to level to 100. (Use integers, Press '0' when you are finished)\nGuide: \n1 = Archery\n2 = Block\n3 = Heavy Armor\n4 = One-Handed\n5 = Two-Handed\n6 = Smithing\n7 = Light Armor\n8 = Lockpicking\n9 = Pickpocket\n10 = Sneak\n11 = Speech\n12 = Alchemy\n13 = Enchanting\n14 = Restoration\n15 = Illusion\n16 = Destruction\n17 = Conjuration\n18 = Alteration ";
+    cin >> skill;
+    switch(skill)
+    {
+        case 1:
+            while(arch <= 100)
+            {
+            exp += arch;
+            arch++;
+            }
+            break;
+        case 2:
+            while(block <= 100)
+            {
+            exp += block;
+            block++;
+            }
+            break;
+        case 3:
+            while(hvy <= 100)
+            {
+            exp += hvy;
+            hvy++;
+            }
+            break;
+        case 4:
+            while(hand1 <= 100)
+            {
+            exp += hand1;
+            hand1++;
+            }
+            break;
+        case 5:
+            while(hand2 <= 100)
+            {
+            exp += hand2;
+            hand2++;
+            }
+            break;
+        case 6:
+            while(smith <= 100)
+            {
+            exp += smith;
+            smith++;
+            }
+            break;
+        case 7:
+            while(lgt <= 100)
+            {
+            exp += lgt;
+            lgt++;
+            }
+            break;
+        case 8:
+            while(lock <= 100)
+            {
+            exp += lock;
+            lock++;
+            }
+            break;
+        case 9:
+            while(pick <= 100)
+            {
+            exp += pick;
+            pick++;
+            }
+            break;
+        case 10:
+            while(sneak <= 100)
+            {
+            exp += sneak;
+            sneak++;
+            }
+            break;
+        case 11:
+            while(speech <= 100)
+            {
+            exp += speech;
+            speech++;
+            }
+            break;
+        case 12:
+            while(alch <= 100)
+            {
+            exp += alch;
+            alch++;
+            }
+            break;
+        case 13:
+            while(ench <= 100)
+            {
+            exp += ench;
+            ench++;
+            }
+            break;
+        case 14:
+            while(rest <= 100)
+            {
+            exp += rest;
+            rest++;
+            }
+            break;
+        case 15:
+            while(ill <= 100)
+            {
+            exp += ill;
+            ill++;
+            }
+            break;
+        case 16:
+            while(dest <= 100)
+            {
+            exp += dest;
+            dest++;
+            }
+            break;
+        case 17:
+            while(conj <= 100)
+            {
+            exp += conj;
+            conj++;
+            }
+            break;
+        case 18:
+            while(alt <= 100)
+            {
+            exp += alt;
+            alt++;
+            }
+            break;
+        default:
+            break;
+    }
+    }
+    while(skill != 0);
+    while(exp >= (charLevel + 3) * 25)
+    {
+        exp -= (charLevel + 3) * 25;
+        charLevel++;
+    }
+    cout << "Your character will be level " << charLevel;
+    return 0;
+}
